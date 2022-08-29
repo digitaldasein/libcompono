@@ -1,0 +1,414 @@
+/*********************************************
+ * Basic KU Leuven stylesheet
+ *
+ * Author(s):     Senne Van Baelen
+ * Date created:  2020-08-29
+ *********************************************/
+
+:root {
+    /* shower vars: ~L600) */
+    --kul-blue: rgba(29, 141, 176, 1);
+    --kul-darkblue: rgba(0, 64, 122, 1);
+    --kul-secblue: rgba(220, 231, 240, 1);
+    --kul-dark: rgba(47, 77, 93, 1);
+    --kul-gray: rgba(255, 255, 255, 0.5);
+    --kul-lgray: rgba(255, 255, 255, 0.5);
+    --heading-color: rgba(0, 64, 122, 1);
+    --link-color: #2a76dd;
+    --kul-titlepage-h-top: 12%;
+    --kul-titlepage-h-middle: 65%;
+    --kul-titlepage-h-bottom: 23%;
+    --kul-titlepage-padding-left: 4%;
+    --titlepage-padding-left: 4%;
+}
+
+/*------------------------------------------*/
+/* html (custom)
+/*------------------------------------------*/
+code {
+    font-family: Consolas,"courier new";
+    color: black;
+    background-color: #f1f1f1;
+    padding: 2px 4px 2px 4px;
+    font-size: 90%;
+}
+/* Paragraphs */
+
+.slide p {
+    line-height:1.3em;
+}
+
+/* Headers */
+
+.slide h1,
+.slide h2,
+.slide h3,
+.slide h4,
+.slide h5,
+.slide h6 {
+    margin: 0 0 20px 0;
+    /*color: #222;*/
+    color: var(--heading-color);
+    line-height: 1.2;
+}
+.slide h1 {
+    font-size: 2.1em;
+    font-weight: 600;
+}
+
+.slide h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.slide h3 {
+font-size: 1.3em; }
+
+.slide h4 {
+font-size: 1em; }
+
+.slide h1 {
+text-shadow: none; }
+
+
+/* Hyperlinks */
+.shower a {
+    color: var(--link-color);
+    text-decoration: none;
+    -webkit-transition: color .15s ease;
+    -moz-transition: color .15s ease;
+    transition: color .15s ease;
+}
+.shower a:hover {
+    color: #6ca0e8;
+    text-shadow: none;
+    border: none;
+}
+
+/* KUL Titlepage */
+
+.shower .kul-titlepage{
+    z-index:-1;
+    position: absolute !important;
+    min-height:100% !important;
+    width:100% !important;
+    height:100% !important;
+    margin:0 !important;
+    padding:0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left:0 !important;
+    right:0 !important;
+}
+
+.shower .kul-titlepage{
+    min-height:100% !important;
+    height:100% !important;
+    width:100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left:0 !important;
+    right:0 !important;
+    margin:0 !important;
+    /*higher z-index than slide nr*/
+    z-index:50 !important;
+}
+
+.shower .kul-titlepage-logo{
+    height:0;
+    /*padding-bottom: calc(- var(--kul-titlepage-padding-left));*/
+    /*margin-bottom: -100px;*/
+}
+.shower .kul-titlepage-logo img{
+    z-index: 999 !important;
+    top:0;
+    left:0;
+    margin-top:4.5%;
+    height: 7vh;
+    width: auto;
+    padding-left: var(--kul-titlepage-padding-left);
+    border:none;
+}
+
+.shower .kul-titlepage-top{
+    top:0 !important;
+    height:var(--kul-titlepage-h-top) !important;
+}
+
+
+.shower .kul-titlepage-middle{
+    padding: 0 0 0 var(--kul-titlepage-padding-left);
+    height:var(--kul-titlepage-h-middle) !important;
+    font-size: 0.70em;
+    background-color: var(--kul-blue);
+}
+
+.shower .kul-titlepage-bottom{
+    padding: 0em 0 0 var(--kul-titlepage-padding-left);
+    background-color: var(--kul-secblue);
+    height:var(--kul-titlepage-h-bottom) !important;
+    /*bottom:0 !important;*/
+    font-size:0.8em;
+    line-height:1.3em;
+}
+
+.shower .kul-titlepage-middle-content{
+    padding-top: 15% !important;
+    padding-right:15% !important;
+}
+.shower .kul-titlepage-bottom-content{
+    padding-top:0.5em;
+}
+
+.title-author {
+    height:7em;
+    font-size:1.2em;
+    line-height:1.3em;
+}
+
+/* General */
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align:center;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width:100%;
+}
+/*.center {*/
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*height: calc( 100% - var(--slide-top-side) );*/
+/*}*/
+
+
+/* Grid */
+.gr-1 {
+  display: grid;
+  grid-template-areas: "a";
+  grid-gap: 10px;
+}
+ {
+}
+.gr-2 {
+  display: grid;
+  grid-template-areas: "a a";
+  grid-gap: 10px;
+}
+.gr-2 > div {
+  margin-top:0;
+}
+.gr-3 {
+  display: grid;
+  grid-template-areas: "a a a";
+  grid-gap: 10px;
+}
+
+.gr-1 > div,
+.gr-2 > div,
+.gr-3 > div {
+    margin-top:0.21em;
+}
+
+.gr-1 > div > img,
+.gr-2 > div > img,
+.gr-3 > div > img {
+    display: grid;
+    justify-items: center;
+}
+
+/* Beamer-like lists */
+
+.shower ul, .shower ol {
+    list-style: none;
+    line-height: 1.4em;
+    padding-left:0.5em;
+    font-size:1em;
+}
+.shower div > ul, .shower div > ol {
+    margin:0;
+}
+
+.shower ul > li:before
+{
+    content: "\2023";
+    vertical-align:2%;
+    margin: 0 0.42em 0 0.35em;
+    font-size: 1em;
+    /*vertical-align: top;*/
+    color: var(--heading-color) !important;
+}
+
+.shower ul > ul > li,
+.shower ol > ol > li,
+.shower ol > ul > li,
+.shower  ul > ol > li,
+.shower li > ol > li,
+.shower  ul > li > ul > li > ul > li,
+.shower ul > li > ul > li,
+.shwoer ul > ul > ul > li  {
+    font-size: 0.85em ;
+}
+
+.shower ul > li > ul > li,
+.shower ol > li > ol > li,
+.shower ol > li > ul > li {
+    line-height: 1.35em;
+}
+
+.shower  ul > li > ul > li > ul > li,
+.shower  ol > li > ol > li > ol > li {
+    line-height:1.4em;
+}
+
+.shower ul > li > ul > li:before,
+.shower ol > li > ul > li:before,
+.shower ul > ul > li:before  {
+    content: "\25A0";
+    vertical-align:17%;
+    font-size: 0.41em;
+    /*font-size: 8px;*/
+    display: inline-block;
+    margin: 0 2.1em 0 2.4em;
+    width: 0em;
+    color: var(--heading-color);
+}
+
+.shower ul > li > ul > li > ul > li:before,
+.shower ul > ul > ul > li:before  {
+    content: "\25CF" ;
+    vertical-align:14%;
+    font-size: 0.48em;
+    display: inline-block;
+    /*margin: 0 3.5em;*/
+    margin-right: 0em;
+    margin-left: 3.3em;
+    width: 2em;
+    color: var(--heading-color);
+}
+
+.shower ol { counter-reset: item; }
+.shower ol li {  display: block; }
+.shower ol ol{ counter-reset: item; }
+.shower ol ul { counter-reset: item; }
+
+.shower ol > ul li:before  {
+    content: counter(item) ". ";
+    counter-increment: item;
+    color: var(--heading-color) ;
+}
+
+.shower ol li:before  {
+    content: counter(item) ". ";
+    counter-increment: item;
+    color: var(--heading-color) ;
+}
+
+.shower ol > li > ol {
+    padding-left:1.1em;
+}
+.shower ol > li > ol > li:before  {
+    content: counters(item, ".") " ";
+    counter-increment: item;
+    color: var(--heading-color) ;
+    /*font-size: 0.8em ;*/
+    margin-right: 0.3em;
+}
+
+.shower li ol > li:before {
+    content: counters(item, ".") " ";
+    counter-increment: item;
+    color: var(--heading-color) ;
+    font-size: 0.86em ;
+}
+
+.shower ol > li > ol > li > ol {
+    padding-left:1.65em;
+}
+
+.shower ol.roman { counter-reset: item; }
+.shower ol.roman li { display: block; }
+
+.shower ol.roman  li {
+    list-style: none;
+    display:table-row;
+    line-height: 1.5em;
+}
+.shower ul > li > ol.roman  li {
+    line-height: 1.2em;
+}
+
+.shower ol.roman  li:before  {
+    content: "(" counter(item, lower-roman) ") ";
+    counter-increment: item;
+    color: var(--heading-color) ;
+    display: table-cell;
+    text-align: right;
+    padding-right:0.35em ;
+}
+
+.shower li ol.roman > li:before{
+    display: table-cell;
+    content: "(" counter(item, lower-roman) ") ";
+    counter-increment: item;
+    color: var(--heading-color) ;
+    padding-right:0.5em ;
+    padding-left:0.95em;
+    vertical-align:3%;
+    width:0.6em;
+}
+
+/* No "item" (bullet, arrow,...) content in a list */
+
+.shower ul.noitem > li:before,
+.shower ul > li > ul.noitem > li:before,
+.shower ol > li > ul.noitem > li:before,
+.shower ul > ul.noitem > li:before,
+.shower ul > li > ul.noitem > li:before,
+.shower ol > li > ul.noitem > li:before,
+.shower ul > ul.noitem > li:before,
+.shower ul > li > ul.noitem > li:before {
+    content: "";
+}
+
+/* List-like table elementas, up to 2 levels */
+
+.tablelist {
+    line-height: 1.2em;
+}
+
+td.tablelist-l0:before {
+    content: "\2023";
+    /*vertical-align:2%;*/
+    margin: 0 0.42em 0 0.35em;
+    font-size: 1em;
+    /*vertical-align: top;*/
+    color: var(--heading-color) !important;
+}
+td.tablelist-l1:before {
+    content: "\25A0";
+    vertical-align:20%;
+    font-size: 0.40em;
+    /*font-size: 8px;*/
+    display: inline-block;
+    margin: 0 2.1em 0 3.5em;
+    width: 0em;
+    color: var(--heading-color);
+}
+
+/* Images */
+
+.img-caption {
+    padding: 0 5% 0 5%;
+    display:grid;
+    justify-content: center;
+    font-size:0.6em;
+    line-height:1.3em;
+    margin-bottom:10px;
+    margin-top:5px;
+}

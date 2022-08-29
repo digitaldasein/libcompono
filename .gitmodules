@@ -1,0 +1,21 @@
+[submodule "examples/shower/lib/shower/core"]
+	path = examples/shower/lib/shower/core
+	url = https://github.com/shower/core
+[submodule "modules/dd-slide-collection"]
+	path = modules/dd-slide-collection
+	url = https://github.com/digitaldasein/dd-slide-collection
+[submodule "modules/dd-titlepage"]
+	path = modules/dd-titlepage
+	url = https://github.com/digitaldasein/dd-titlepage
+[submodule "modules/dd-footer"]
+	path = modules/dd-footer
+	url = https://github.com/digitaldasein/dd-footer
+[submodule "modules/dd-slide"]
+	path = modules/dd-slide
+	url = https://github.com/digitaldasein/dd-slide
+[submodule "modules/dd-code"]
+	path = modules/dd-code
+	url = https://github.com/digitaldasein/dd-code
+[submodule "modules/dd-grid"]
+	path = modules/dd-grid
+	url = https://github.com/digitaldasein/dd-grid

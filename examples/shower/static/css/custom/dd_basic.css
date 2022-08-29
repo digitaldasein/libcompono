@@ -1,0 +1,371 @@
+/*********************************************
+ * Basic Digital Dasein stylesheet
+ *
+ * Author(s):     Senne Van Baelen, Gerben Peeters
+ * Date created:  2022-02-25
+ *********************************************/
+
+:root {
+    /* change shower settings in shower.css*/
+
+    /*
+     * Digital Dasein additions
+     */
+
+    /* dd color pallette */
+    /*--dd-prim-color: rgba(90, 122, 100, 1);*/
+    /*--dd-prim-color-dark: rgba(65, 90, 72, 1);*/
+    /*--dd-sec-color: rgba(238, 254, 216, 1);*/
+    /*--dd-sec-color-dark: rgba(238, 254, 216, 1);*/
+
+    /* dd slide design */
+    /*--dd-slide-pad-left: var(--slide-pad-left, 20px);*/
+    /*--dd-slide-pad-top: var(--slide-pad-top, 20px);*/
+    /*--dd-slide-pad-right: var(--slide-pad-right, 20px);*/
+    /*--dd-slide-bg-color: var(--slide-bg-color, white);*/
+    /*--dd-link-color: var(--dd-prim-color);*/
+    /*--dd-slide-gap: 96px;*/
+    /*--dd-slide-nr-font-size: 0.6em;*/
+    /*--dd-slide-nr-pad-right: 0.4em;*/
+    /*--dd-slide-nr-pad-bottom: 0.4em;*/
+    /*--dd-slide-nr-color: black;*/
+    /*--dd-heading-color: var(--dd-prim-color-dark, blue);*/
+
+    /* dd footer design (does not inculude slide nr) */
+    /*--dd-footer-pad-side: 0.2em;*/
+    /*--dd-footer-pad-bottom: 0.4em;*/
+    /*--dd-footer-font-size: 0.55em;*/
+    /*--dd-footer-img-height: calc( 2.5 * var(--dd-footer-font-size) );*/
+    /*--dd-footer-align-v: center;*/
+
+    /* dd title page */
+    /*--dd-titlepage-h-top: 12%;*/
+    /*--dd-titlepage-h-middle: 65%;*/
+    /*--dd-titlepage-h-bottom: 23%;*/
+    /*--dd-titlepage-padding-left: 4%;*/
+    /*--dd-title-font-size: 2.0em;*/
+
+    /* dd caption banner */
+    /*--dd-caption-pad-side: 0em;*/
+    /*--dd-caption-font-size: 1em;*/
+    /*--dd-caption-img-height: calc( 3.0 * var(--dd-caption-font-size) );*/
+
+
+    /*
+     * Overwriting shower-material slide configs
+     */
+    /*--font-size-slide-nr: var(--dd-slide-nr-font-size, 0.4em);*/
+    /*--right-slide-nr: var(--dd-slide-nr-pad-right, 0.4em);*/
+    /*--bottom-slide-nr: var(--dd-slide-nr-pad-bottom, 0.2em);*/
+    /*--color-slide-nr: var(--dd-slide-nr-color, black);*/
+
+}
+
+/*------------------------------------------*/
+/* html for your own dd-slide inserted content.
+/*------------------------------------------*/
+
+/* Code Blocks */
+
+.slide code {
+    font-family: Consolas,"courier new";
+    color: black;
+    background-color: var(--dd-sec-color);
+    padding: 0px 4px 0px 4px;
+    font-size: 90%;
+}
+
+.slide pre {
+    background-color: var(--dd-sec-color);
+    border-radius:7px;
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Paragraphs */
+
+.slide p {
+    line-height:1.3em;
+}
+
+/* Headers */
+
+.slide h1,
+.slide h2,
+.slide h3,
+.slide h4,
+.slide h5,
+.slide h6 {
+    margin: 0 0 20px 0;
+    color: var(--dd-heading-color);
+    line-height: 1.2;
+}
+
+.slide h1 {
+    font-size: 2.1em;
+    font-weight: 600;
+}
+
+.slide h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.slide h3 {
+font-size: 1.3em; }
+
+.slide h4 {
+font-size: 1em; }
+
+.slide h1 {
+text-shadow: none; }
+
+
+/* Hyperlinks */
+.shower a {
+    color: var(--dd-link-color);
+    text-decoration: none;
+    -webkit-transition: color .15s ease;
+    -moz-transition: color .15s ease;
+    transition: color .15s ease;
+}
+.shower a:hover {
+    color: #6ca0e8;
+    text-shadow: none;
+    border: none;
+}
+
+
+/* General */
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align:center;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width:100%;
+}
+/*.center {*/
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*height: calc( 100% - var(--slide-top-side) );*/
+/*}*/
+
+
+.gr-1 > div,
+.gr-2 > div,
+.gr-3 > div {
+    margin-top:0.21em;
+}
+
+.gr-1 > div > img,
+.gr-2 > div > img,
+.gr-3 > div > img {
+    display: grid;
+    justify-items: center;
+}
+
+/* Beamer-like lists */
+
+.shower ul, .shower ol {
+    list-style: none;
+    line-height: 1.4em;
+    padding-left:0.5em;
+    font-size:1em;
+}
+.shower div > ul, .shower div > ol {
+    margin:0;
+}
+
+.shower ul > li:before
+{
+    content: "\2023";
+    vertical-align:2%;
+    margin: 0 0.42em 0 0.35em;
+    font-size: 1em;
+    /*vertical-align: top;*/
+    color: var(--dd-heading-color) !important;
+}
+
+.shower ul > ul > li,
+.shower ol > ol > li,
+.shower ol > ul > li,
+.shower  ul > ol > li,
+.shower li > ol > li,
+.shower  ul > li > ul > li > ul > li,
+.shower ul > li > ul > li,
+.shwoer ul > ul > ul > li  {
+    font-size: 0.85em ;
+}
+
+.shower ul > li > ul > li,
+.shower ol > li > ol > li,
+.shower ol > li > ul > li {
+    line-height: 1.35em;
+}
+
+.shower  ul > li > ul > li > ul > li,
+.shower  ol > li > ol > li > ol > li {
+    line-height:1.4em;
+}
+
+.shower ul > li > ul > li:before,
+.shower ol > li > ul > li:before,
+.shower ul > ul > li:before  {
+    content: "\25A0";
+    vertical-align:17%;
+    font-size: 0.41em;
+    /*font-size: 8px;*/
+    display: inline-block;
+    margin: 0 2.1em 0 2.4em;
+    width: 0em;
+    color: var(--dd-heading-color);
+}
+
+.shower ul > li > ul > li > ul > li:before,
+.shower ul > ul > ul > li:before  {
+    content: "\25CF" ;
+    vertical-align:14%;
+    font-size: 0.48em;
+    display: inline-block;
+    /*margin: 0 3.5em;*/
+    margin-right: 0em;
+    margin-left: 3.3em;
+    width: 2em;
+    color: var(--dd-heading-color);
+}
+
+.shower ol { counter-reset: item; }
+.shower ol li {  display: block; }
+.shower ol ol{ counter-reset: item; }
+.shower ol ul { counter-reset: item; }
+
+.shower ol > ul li:before  {
+    content: counter(item) ". ";
+    counter-increment: item;
+    color: var(--dd-heading-color) ;
+}
+
+.shower ol li:before  {
+    content: counter(item) ". ";
+    counter-increment: item;
+    color: var(--dd-heading-color) ;
+}
+
+.shower ol > li > ol {
+    padding-left:1.1em;
+}
+.shower ol > li > ol > li:before  {
+    content: counters(item, ".") " ";
+    counter-increment: item;
+    color: var(--dd-heading-color) ;
+    /*font-size: 0.8em ;*/
+    margin-right: 0.3em;
+}
+
+.shower li ol > li:before {
+    content: counters(item, ".") " ";
+    counter-increment: item;
+    color: var(--dd-heading-color) ;
+    font-size: 0.86em ;
+}
+
+.shower ol > li > ol > li > ol {
+    padding-left:1.65em;
+}
+
+.shower ol.roman { counter-reset: item; }
+.shower ol.roman li { display: block; }
+
+.shower ol.roman  li {
+    list-style: none;
+    display:table-row;
+    line-height: 1.5em;
+}
+.shower ul > li > ol.roman  li {
+    line-height: 1.2em;
+}
+
+.shower ol.roman  li:before  {
+    content: "(" counter(item, lower-roman) ") ";
+    counter-increment: item;
+    color: var(--dd-heading-color) ;
+    display: table-cell;
+    text-align: right;
+    padding-right:0.35em ;
+}
+
+.shower li ol.roman > li:before{
+    display: table-cell;
+    content: "(" counter(item, lower-roman) ") ";
+    counter-increment: item;
+    color: var(--dd-heading-color) ;
+    padding-right:0.5em ;
+    padding-left:0.95em;
+    vertical-align:3%;
+    width:0.6em;
+}
+
+/* No "item" (bullet, arrow,...) content in a list */
+
+.shower ul.noitem > li:before,
+.shower ul > li > ul.noitem > li:before,
+.shower ol > li > ul.noitem > li:before,
+.shower ul > ul.noitem > li:before,
+.shower ul > li > ul.noitem > li:before,
+.shower ol > li > ul.noitem > li:before,
+.shower ul > ul.noitem > li:before,
+.shower ul > li > ul.noitem > li:before {
+    content: "";
+}
+
+/* List-like table elementas, up to 2 levels */
+
+.tablelist {
+    line-height: 1.2em;
+}
+
+td.tablelist-l0:before {
+    content: "\2023";
+    /*vertical-align:2%;*/
+    margin: 0 0.42em 0 0.35em;
+    font-size: 1em;
+    /*vertical-align: top;*/
+    color: var(--dd-heading-color) !important;
+}
+td.tablelist-l1:before {
+    content: "\25A0";
+    vertical-align:20%;
+    font-size: 0.40em;
+    /*font-size: 8px;*/
+    display: inline-block;
+    margin: 0 2.1em 0 3.5em;
+    width: 0em;
+    color: var(--dd-heading-color);
+}
+
+/* caption */
+
+.caption{
+background-color: var(--dd-prim-color-dark);
+}
+
+/* Images */
+
+.img-caption {
+    padding: 0 5% 0 5%;
+    display:grid;
+    justify-content: center;
+    font-size:0.6em;
+    line-height:1.3em;
+    margin-bottom:10px;
+    margin-top:5px;
+}

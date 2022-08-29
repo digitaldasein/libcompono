@@ -1,0 +1,26 @@
+/* Shower */
+
+@import 'shower-full.css' screen;
+@import 'shower-grid.css' screen;
+@import 'shower-print.css' print;
+
+.shower {
+    --slide-gap: var(--dd-slide-gap, 96px);
+    --slide-ratio: var(--dd-slide-ratio, calc(16 / 9));
+    --slide-width: var(--dd-slide-width, 1024px);
+    --slide-height: calc(
+        var(--slide-width) / var(--slide-ratio)
+    );
+
+    --progress-size: 5px;
+    --progress-color: var(--dd-prim-color, rgba(153, 155, 132, 1));
+
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+
+    margin: 0;
+    color: black;
+    counter-reset: slide;
+    font: var(--dd-font);
+}

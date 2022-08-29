@@ -1,0 +1,38 @@
+/*********************************************
+ * Basic KUL stylesheet for printing
+ *
+ * Author(s):     Senne Van Baelen
+ * Date created:  2020-08-29
+ *********************************************/
+
+.shower ul > li > ul > li:before,
+.shower ol > li > ul > li:before,
+.shower ul > ul > li:before  {
+    vertical-align:10%;
+    font-size: 0.65em;
+    margin: 0 1.5em;
+    /*width: 0em;*/
+}
+.shower ul > li > ul > li > ul > li,
+.shower ul > ul > ul > li  {
+    margin-left: -0.75em;
+}
+
+.shower ol > li > ul > li{
+    margin-left: -0.50em;
+}
+
+.shower ul > li > ul > li > ul > li:before,
+.shower ul > ul > ul > li:before  {
+    /*vertical-align:13%;*/
+    font-size: 0.65em;
+    margin-right: -0.5em;
+    /*width: 2em;*/
+}
+
+.shower .kul-titlepage-logo img{
+    height: 10vh;
+    /*width: auto;*/
+    /*padding-left: var(--kul-titlepage-padding-left);*/
+    /*border:none;*/
+}

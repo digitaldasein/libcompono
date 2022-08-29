@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Digital Dasein presentation">
+    <title>DD - compono + shower</title>
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+    <link rel="stylesheet" href="./static/css/styles.css">
+    <script src="../../dist/libcompono.min.js"></script>
+    <style>
+      :root {
+      }
+      body {
+        margin:0;
+      }
+    </style>
+  </head>
+
+  <body class="shower list">
+    <dd-slide-collection main-title="My cool title goes here"
+                         sub-title="And this is a subtitle"
+                         author="Senne Van Baelen, Gerben Peeters"
+                         organisation="Digital Dasein"
+                         organisation-url="https://digitaldasein.org/"
+                         date="2022-07-20"
+                         url=""
+                         img-src="../../examples/assets/logo.jpeg"
+                         img-url="http://test.org"
+                         >
+      <dd-footer></dd-footer>
+      <dd-titlepage></dd-titlepage>
+
+      <dd-slide>
+        <h2>Take a deep breath and enjoy the presentation!</h2>
+        <div class="next">
+          And now this
+        </div>
+      </dd-slide>
+
+      <dd-slide>
+        <h2>The dd-present template</h2>
+        <p> dd-present facilitates and harmonizes your slide composition by extending the
+        <a href="https://github.com/shower/shower" target="_blank">Shower HTML presentation template </a>
+        &mdash; mainly by adding a configuration file, <a href="https://www.w3schools.com/css/css_intro.asp" target="_blank">a custom style sheet</a> ,
+        and <a href="https://open-wc.org/" target="_blank">two open web components</a>. Respectively:</p>
+        <p>
+        <ul>
+          <li><code>config.json</code>, to provide meta data (author, title, date, ...)</li>
+          <li><code>dd_basic.css</code>, to tweak your presentation layout (colors, font-sizes, margins, ...)</li>
+          <li><code>&lt;dd-slide&gt;</code>, to minimize boilerplate code in slide building</li>
+          <li><code>&lt;dd-grid&gt;</code>, to minimize boilerplate code in grid building</li>
+        </ul>
+        </p>
+      </dd-slide>
+
+      <dd-slide>
+        <h2>The configuration file</h2>
+        <p>The presentation caption banner, title slide, and footer automagically nest the information from the configuration file.
+        Therefore, you need to change its data in <code>./config.json</code>, which default to:</p>
+        <pre style="margin-left: 140px; margin-right: 140px;"><code>{
+"author" : "Gerben Peeters & Senne Van Baelen",
+"title" : "Welcome to digital dasein!",
+[...],
+"date" : "2022-02-24",
+"company" : "Digital Dasein"
+}</code></pre>
+      </dd-slide>
+
+      <dd-slide>
+        <h1>This is the first header.</h1>
+        <h2>This is the second header.</h2>
+        <h3>This is the third header.</h3>
+        <h4>This is the forth header.</h4>
+        <h5>This is the fifth header.</h5>
+        <h6>This is the sixth header.</h6>
+        <p>This is a paragraph.</p>
+      </dd-slide>
+
+      <dd-slide dim="50 50;">
+        <h2>Feel entitled to change me.</h2>
+        <div slot="1">
+          This is my own content.
+          <h3>Nest whatever you want here.</h3>
+        </div>
+        <div slot="2">
+          <p>Digital dasein SVG logo.</p>
+          <img src="../static/img/dd-logo.svg" width="70%" height="auto" alt="Digital Dasein Logo">
+        </div>
+      </dd-slide>
+
+      <dd-slide dim="50 50;"></dd-slide>
+
+      <dd-slide dim="33 33 33;"></dd-slide>
+
+      <dd-slide dim="50 50; 50 50;"></dd-slide>
+
+      <dd-slide dim="50 50; 50 50;">
+        <h2>Example of a 2 by 2 grid</h2>
+        <div slot="1">
+          The width of the columns is set to be 50 percent (taking into account margins).
+        </div>
+        <div slot="2">
+          This is the second item.<br>
+          Let us use this one <br>
+          To bump down the next row <br>
+          Automagically<br>
+          <br>
+        </div>
+        <div slot="3">
+          The early bird gets the worm.
+        </div>
+        <div slot="4">
+          But the second mouse gets the cheese.
+        </div>
+      </dd-slide>
+
+      <dd-slide no-footer>
+        <h2>This slide has no footer</h2>
+        <div>
+          On achieves this by setting the boolean attribute:
+          <code style="background-color:lightBlue; margin:-40px 0 -40px 0;font-size:1.00em;">no-footer</code>
+        </div>
+        </dd-slide>
+
+      <dd-slide>
+        <h2>Let us try to nest a grid by calling dd-grid.</h2>
+        <dd-grid dim="70 30; 50 50; 30 40 30;">
+          <div slot="1">
+            I should be 70 percent wide whereas my neighbour should only be 30.
+          </div>
+          <div slot="2">
+            Am I only 30? There is nothing wrong with being 30 :'-(.
+          </div>
+          <div slot="3">
+            <p>We should be 50-50, not unlike Belgian taxes.</p>
+          </div>
+          <div slot="4">
+            The winner takes it all.
+          </div>
+          <div slot="5">
+            We are 30 40 30. Let us fill this a bit so you can see this for yourselves.
+          </div>
+          <div slot="6">
+            We are 30 40 30. Let us fill this a bit so you can see this for yourselves.
+          </div>
+          <div slot="7">
+            We are 30 50 30. Let us fill this a bit so you can see this for yourselves.
+          </div>
+        </dd-grid>
+      </dd-slide>
+
+      <dd-slide>
+        <h2>Let us try to nest a grid by calling dd-grid.</h2>
+        <dd-grid dim="70 30; 50 50; 30 40 30;">
+        </dd-grid>
+      </dd-slide>
+
+      <!-- Slide progress bar -->
+      <div class="progress"></div>
+
+
+    </dd-slide-collection>
+
+    <!-- scripts -->
+    <script src="lib/shower/core/dist/shower.js" defer></script>
+    <!--<script src="static/dist/shower.min.js"></script>-->
+
+  </body>
+</html>

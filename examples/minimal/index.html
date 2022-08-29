@@ -1,0 +1,54 @@
+<!--
+  SPDX-FileCopyrightText: 2022 Digital Dasein <https://digitaldasein.org/>
+  SPDX-FileCopyrightText: 2022 Gerben Peeters <gerben@digitaldasein.org>
+  SPDX-FileCopyrightText: 2022 Senne Van Baelen <senne@digitaldasein.org>
+
+  SPDX-License-Identifier: MIT
+-->
+
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <style>
+      @media print {
+        @page {
+          margin: 0;
+          size: 1024px 576px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <script src="../../dist/libcompono.min.js"></script>
+    <dd-slide-collection main-title="My cool title goes here"
+                         sub-title="And this is a subtitle"
+                         author="Senne Van Baelen, Gerben Peeters"
+                         organisation="Digital Dasein"
+                         organisation-url="https://digitaldasein.org/"
+                         date="2022-07-20"
+                         url=""
+                         img-url="http://test.org"
+                         img-src="../../examples/assets/logo.jpeg">
+
+      <dd-footer></dd-footer>
+      <dd-titlepage></dd-titlepage>
+
+      <dd-slide >
+        <h2>My first slide</h2>
+      </dd-slide>
+
+      <dd-slide dim="50 50; 50 50;">
+        <h2>My second slide, with a grid</h2>
+      </dd-slide>
+
+      <section class="slide">
+        <h2>And this is a section</h2>
+        <div>
+          Which also works, but does not contain the default footer to-selector (dd-slide), so no footer will be rendered in this default setting
+        </div>
+      </section>
+
+    </dd-slide-collection>
+  </body>
+</html>

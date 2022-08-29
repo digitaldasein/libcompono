@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Template KUL, Herman Bruyninckx, Senne Van Baelen, August 29,
+      2020</title>
+    <meta charset="utf-8">
+    <meta author="Senne Van Baelen">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+          href="static/css/styles_all.css">
+    <!--fully integrated, compressed stylesheet: -->
+    <!--<link rel="stylesheet"-->
+          <!--href="dist/styles.min.css">-->
+    <style>
+      .shower {
+        --slide-width: 1024px;
+        --slide-ratio: calc(16 / 9);
+        --slide-height: calc(var(--slide-width) / var(--slide-ratio));
+        --heading-color: var(--kul-darkblue);
+        --font: 24px/2 'Roboto', sans-serif;
+        --progress-size:  4px;
+        --right-slide-nr: 2%;
+        --bottom-slide-nr: 5px;
+        --font-size-slide-nr: 0.6em;
+        --color-slide-nr: #000;
+        --slide-left-side: 20px;
+        --slide-right-side: 20px;
+        /*--slide-top-side:15px;*/
+        --link-color: #2a76dd;
+      }
+     .slide {
+     }
+    </style>
+
+    <!-- mathjax integration [[[ -->
+    <script>
+      MathJax = {
+              chtml: {
+                      displayAlign: 'center',
+                      displayIndent: '0'
+                    },
+              tex: {
+                      inlineMath: [['$', '$'], ['\\(', '\\)']],
+                      processEscapes: true,
+                      tags: 'ams'
+                    }
+            };
+    </script>
+
+    <!--local MathJax (not in repository)-->
+    <!--<script src="static/js/mathjax/es5/tex-chtml.js"-->
+            <!--id="MathJax-script" async>-->
+    <!--</script>-->
+    <!--MathJax from CDN-->
+    <script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <!-- end mathjax integration ]]]-->
+    <!-- templates: [[[ -->
+    <template id="slide-title">
+      <span>
+        KU Leuven template html presentation
+        </span>
+      </template>
+      <template id="slide-author"> <span>Herman Bruyninckx, Senne Van
+          Baelen</span>
+      </template>
+      <template id="slide-date"> <span>Augst 29, 2020</span></template>
+      <template id="slide-meeting"> <span><i>Demo</i></span></template>
+
+      <template id="slide-footer">
+        <div style="width: 100%; position: absolute; bottom: 0; left:0;
+                    display:flex; flex-direction:row; height:40px;
+                    align-items:center;">
+          <div style="flex-grow:1; text-align:left;width:100px">
+            <img height="30px"
+                 style="flex-grow:1;position:absolute;bottom:6px;left:3px"
+                 src="figures/logo_kul.svg">
+          </div>
+          <div style="flex-grow:1; font-size: 0.55em; text-align:center;">
+            <strong><my-title></my-title></strong> &ndash;
+            <my-author></my-author>, &nbsp;
+            <my-date></my-date> &ndash; <my-meeting></my-meeting>
+          </div>
+          <div style="flex-grow:1; text-align:right; width:100px;"></div>
+        </div>
+      </template>
+      <!-- end templates ]]] -->
+      <!-- deploying templates in DOM Element: [[[ -->
+      <script type="text/javascript" async>
+        customElements.define('my-title',
+        class extends HTMLElement {
+            constructor() {
+              super();
+              let template = document.getElementById('slide-title');
+              let templateContent = template.content;
+              const shadowRoot = this.attachShadow({mode: 'open'})
+                .appendChild(templateContent.cloneNode(true));
+            }
+          })
+      </script>
+
+      <script type="text/javascript" async>
+        customElements.define('my-author',
+        class extends HTMLElement {
+            constructor() {
+                super();
+                let template = document.getElementById('slide-author');
+                let templateContent = template.content;
+                const shadowRoot = this.attachShadow({mode: 'open'})
+                  .appendChild(templateContent.cloneNode(true));
+              }
+      })
+      </script>
+      <script type="text/javascript" async>
+        customElements.define('my-date',
+        class extends HTMLElement {
+            constructor() {
+                super();
+                let template = document.getElementById('slide-date');
+                let templateContent = template.content;
+                const shadowRoot = this.attachShadow({mode: 'open'})
+                  .appendChild(templateContent.cloneNode(true));
+              }
+        })
+      </script>
+      <script type="text/javascript" async>
+        customElements.define('my-meeting',
+        class extends HTMLElement {
+            constructor() {
+              super();
+              let template = document.getElementById('slide-meeting');
+              let templateContent = template.content;
+              const shadowRoot = this.attachShadow({mode: 'open'})
+                .appendChild(templateContent.cloneNode(true));
+            }
+        })
+      </script>
+
+      <script type="text/javascript" async>
+        customElements.define('my-footer',
+        class extends HTMLElement {
+            constructor() {
+                super();
+                let template = document.getElementById('slide-footer');
+                let templateContent = template.content;
+                const shadowRoot = this.attachShadow({mode: 'open'})
+                  .appendChild(templateContent.cloneNode(true));
+              }
+        })
+      </script>
+      <!-- end templates ]]] -->
+  </head>
+  <body class="shower list">
+    <!-- header [[[ -->
+    <header class="caption">
+      <h1><my-title></my-title></h1>
+      <p> <my-author></my-author>, <my-date></my-date>,
+      <my-meeting></my-meeting> </p>
+    </header>
+    <!-- end header ]]] -->
+    <!-- SLIDE 1 Titlepage [[[ -->
+    <section class="slide">
+      <div class='kul-titlepage'>
+        <div class="kul-titlepage-logo">
+          <img src="figures/logo_kul.svg" alt="">
+        </div>
+        <!-- top -->
+        <div class="kul-titlepage-top"></div>
+        <!-- middle -->
+        <div class="kul-titlepage-middle">
+          <div class="kul-titlepage-middle-content">
+            <h1 style="color:white;margin-top:20px;">
+              A basic KU Leuven template
+            </h1>
+            <h3 style="color:white;">
+              Demo using the shower presentation engine
+            </h3>
+          </div>
+        </div>
+        <!-- bottom -->
+        <div class="kul-titlepage-bottom">
+          <div class="kul-titlepage-bottom-content">
+            <b> Herman Bruyninckx, Senne Van Baelen </b> <br>
+            Department of Mechanical Engineering, KU Leuven <br>
+            August 29, 2020
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--]]]-->
+    <!-- SLIDE 2 [[[ -->
+    <section class="slide">
+      <div class="center">
+        <h3>Or create your own titlepage!</h3>
+      </div>
+    </section>
+    <!--]]]-->
+    <!-- SLIDE 3 [[[ -->
+    <section class="slide">
+      <h2>Let's create some lists</h2>
+      <ul>
+        <li>A list item</li>
+        <li><b>Feel free to change the list items for each level in the
+            stylesheet</b>
+          <ul>
+            <li>a sub-item</li>
+            <li>another sub-item
+              <ul>
+                <li>or even a sub-sub-item</li>
+              </ul>
+            </li>
+            <li>a third sub-item</li>
+          </ul>
+        </li>
+        <li>So let's add another one</li>
+      </ul>
+      <ol>
+        <li>A numbered list item
+          <ol>
+            <li>a sub-item</li>
+            <li>another sub-item
+              <ol>
+                <li>or even a sub-sub-item</li>
+              </ol>
+            </li>
+            <li>a third sub-item</li>
+          </ol>
+        </li>
+        <li>So let's add another one</li>
+      </ol>
+
+      <my-footer></my-footer>
+    </section>
+    <!--]]]-->
+ <!-- SLIDE 4 [[[ -->
+ <section class="slide">
+   <h2>Customized roman items</h2>
+   <ol class="roman">
+     <li>A first roman item</li>
+     <li>A second roman item</li>
+   </ol>
+   <ul>
+     <li>A normal list roman sub-items
+       <ol class="roman">
+         <li>so the first item</li>
+         <li>and the second</li>
+       </ol>
+     </li>
+   </ul>
+   <p>
+   <b>Snippet:</b>
+   <pre>
+     <code style="font-size:0.6em;margin:-40px 0 -40px 0; ">
+ &lt;ol class="roman"&gt;
+   &lt;li&gt;A first roman item&lt;/li&gt;
+   &lt;li&gt;A second roman item&lt;/li&gt;
+ &lt;/ol&gt;
+     </code>
+   </pre>
+   </p>
+   <my-footer></my-footer>
+ </section>
+ <!--]]]-->
+    <!-- SLIDE 5 [[[ -->
+    <section class="slide">
+      <h2>Use the custom grid classes for basic colums</h2>
+      <div class="gr-2" style="grid-template-columns: 65%
+        35%;margin-top:25px;">
+        <div style="padding:0 0 0 0;">
+          <ul>
+            <li>This is a <b>gr-2</b> example (2 columns)
+              <ul>
+                <li>use padding (or margin) for positioning</li>
+                <li>try to be consistent!</li>
+                </li>
+              </ul>
+            </li>
+            <li>Classes currently defined:<code style="font-size:0.7em">
+                gr-1, gr-2 and gr-3 </code> <b>Use like:</b>
+              <pre>
+              <code style="font-size:0.6em;margin:-20px 0 -50px
+              0px;text-align:left;">
+  &lt;div class="gr-2" style="grid-template-columns: 50% 50%"&gt;
+    &lt;div style="padding:0 0 0 0;"&gt;
+      &lt;!--this division auto-inherits the grid display style--&gt;
+    &lt;/div&gt;&lt;!--end col 1--&gt;
+    &lt;div style="padding:0 0 0 0;"&gt;
+      &lt;!--this division auto-inherits the grid display style--&gt;
+    &lt;/div&gt;&lt;!--end col 2--&gt;
+  &lt;/div&gt;&lt;!-- end grid --&gt;
+                </code>
+              </pre>
+            </li>
+            <li>The above snippet could be a nice macro!</li>
+          </ul>
+        </div>
+        <div style="padding:0 0 0 0;">
+          <div style="padding:0px 10px 0 10px;">
+            <img width="100%" src="figures/logo_kul.svg">
+            <div class="img-caption">
+              <span><b>Fig. </b>: KUL logo</span>
+            </div>
+          </div>
+          <div style="padding:40px 10px 0 10px;">
+            <img width="100%" src="figures/cogge_comp.png">
+            <div class="img-caption">
+              <span><b>Fig. </b>: some other figure</span>
+            </div>
+          </div>
+        </div>
+      </div><!-- end grid -->
+      <my-footer></my-footer>
+    </section>
+    <!--]]]-->
+    <!-- SLIDE 6 [[[ -->
+    <section class="slide">
+      <h2>Always be consistent with images (aligning, ...)</h2>
+      <ul>
+        <li><b>It's just much more efficient!</b> (
+          <code style="font-size:0.7em;"> e.g.: parent divs + padding + 100% width
+          </code>:
+          simple!)</li>
+        <li>images and grids go hand in hand!</li>
+        <li>snippet of right column in previous slides:
+          <pre>
+          <code style="font-size:0.5em;margin-top:-17px;">
+    &lt;div style="padding:0 0 0 0;"&gt;
+      &lt;div style="padding:0px 10px 0 10px;"&gt;
+        &lt;img width="100%" src="figures/logo_kul.svg"&gt;
+        &lt;div class="img-caption"&gt;
+          &lt;span&gt;&lt;b&gt;Fig. &lt;/b&gt;: KUL logo&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;&lt;!--end image--&gt;
+      &lt;div style="padding:40px 10px 0 10px;"&gt;
+        &lt;img width="100%" src="figures/cogge_comp.png"&gt;
+        &lt;div class="img-caption"&gt;
+          &lt;span&gt;&lt;b&gt;Fig. &lt;/b&gt;: some other figure&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;&lt;!--end image--&gt;
+    &lt;/div&gt;&lt;!--end grid column--&gt;
+          </code>
+          </pre>
+        </li>
+      </ul>
+      <my-footer></my-footer>
+    </section>
+    <!--]]]-->
+    <!-- SLIDE 7 [[[ -->
+    <section class="slide">
+      <h2>The Cauchy-Schwarz Inequality</h2>
+      Let's include some math using the MathJax plugin
+      <div>
+        \[
+        \left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left(
+        \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+        \]
+      </div>
+      <p style="font-size:0.8em;">
+      <b>NOTE for PDF export:</b> the current shower JS code does not
+      "wait" for mathjax (from CDN) content to finish loading. After
+      installing shower CLI, change the following line in
+      <i>path/to/global/node_modules/@shower/cli/core/command/pdf.js</i>:
+      </p>
+      <pre>
+        <code style="margin:-40px 0 -40px 0;font-size:0.65em;">
+  //await page.goto(`file://${cwd}/index.html`) // original line
+  await page.goto(`file://${cwd}/index.html`, {waitUntil: 'networkidle0'})
+        </code>
+      </pre>
+      <p style="font-size:0.75em;margin-top:0;">
+      (<b>networkidle0</b>: consider navigation to be finished when there
+      are no more than 0 network connections for at least 500 ms)
+      <br><br>
+      <b><u>Alternatively</u>, install MathJax locally on your machine!</b>
+      </p>
+      <my-footer></my-footer>
+    </section>
+    <!--]]]-->
+    <!-- SLIDE 8 [[[ -->
+    <section class="slide">
+      <div class="center">
+        <h3>Modify the stylesheets to your liking!</h3>
+        <p>
+        (FYI: this is a <code style="font-size:0.6em;">class="center"</code>
+        div)
+        </p>
+      </div>
+      <my-footer></my-footer>
+    </section>
+    <!--]]]-->
+ <!-- SLIDE 9 [[[ -->
+ <section class="slide">
+   <h3> Use configuration variables in your main html file; snippet: </h3>
+   <pre>
+    <code style="font-size:0.5em;margin-top:-30px;">
+  &lt;style&gt;
+    .shower {
+      --slide-width: 1024px;
+      --slide-ratio: calc(16 / 9);
+      --slide-height: calc(var(--slide-width) / var(--slide-ratio));
+      --heading-color: var(--kul-darkblue);
+      --font: 24px/2 'Roboto', sans-serif;
+      --progress-size:  4px;
+      --right-slide-nr: 2%;
+      --bottom-slide-nr: 5px;
+      --font-size-slide-nr: 0.6em;
+      --color-slide-nr: #000;
+      --slide-left-side: 20px;
+      --slide-right-side: 20px;
+      --slide-top-side:15px;
+      --link-color: #2a76dd;
+      /* for more variables: check stylesheet! */
+    }
+  &lt;/style&gt;
+     </code>
+   </pre>
+   <my-footer></my-footer>
+ </section>
+ <!--]]]-->
+    <!-- SLIDE 10 [[[ -->
+    <section class="slide">
+      <h3>Todo</h3>
+      <ul>
+        <li>better code integration (no need for all the spacing)</li>
+        <li>...</li>
+      </ul>
+      <my-footer></my-footer>
+    </section>
+    <!--]]]-->
+
+    <div class="progress"></div>
+    <!--<script src="static/js/shower.js"></script>-->
+    <!--<script src="static/js/svbaelen.js"></script>-->
+    <!-- fully integrated, compressed file: -->
+    <script src="dist/shower.min.js"></script>
+  </body>
+</html>

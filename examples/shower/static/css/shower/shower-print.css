@@ -1,0 +1,26 @@
+/* Print */
+
+@page {
+    margin: 0;
+    size: 1024px 576px;
+}
+
+.shower {
+    -webkit-print-color-adjust: exact;
+    text-rendering: geometricPrecision;
+}
+
+dd-slide-collection {
+    margin:0;
+    max-height:0;
+}
+
+dd-slide,
+dd-titlepage,
+.slide {
+    overflow:hidden;
+    /*min-width:100%;*/
+    /*min-height:auto;*/
+    /*max-height:100%;*/
+    /*height:100%;*/
+}
