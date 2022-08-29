@@ -115,5 +115,26 @@ export default [
       dir: 'dist/dd-slide-collection',
     },
     preserveEntrySignatures: 'strict',
+  },
+  {
+    input: "./modules/dd-code/dist/src/dd-code.js",
+    plugins: [
+      // Resolve bare module specifiers to relative paths
+      resolve(),
+      // Minify JS
+      terser({
+        ecma: 2020,
+        module: true,
+        warnings: true,
+      }),
+
+      // Print bundle summary
+      summary(),
+    ],
+
+    output: {
+      dir: 'dist/dd-code',
+    },
+    preserveEntrySignatures: 'strict',
   }
 ];
