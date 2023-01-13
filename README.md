@@ -20,6 +20,12 @@ primarily in <b>HTML presentations</b>.  All
 
 For <b>examples</b>, check [below](#examples)!
 
+## Install packages
+
+```sh
+yarn install
+```
+
 ## Submodules
 
 Since these components are the fundamental blocks for the optimised, 
