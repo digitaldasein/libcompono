@@ -2,6 +2,7 @@ build
 bin
 ext-libs
 instructions.txt
+dist
 
 # Logs
 logs
