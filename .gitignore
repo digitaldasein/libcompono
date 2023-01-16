@@ -3,6 +3,7 @@ bin
 ext-libs
 instructions.txt
 dist
+node_modules
 
 # Logs
 logs
