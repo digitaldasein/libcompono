@@ -4,8 +4,8 @@ ext-libs
 instructions.txt
 dist
 /node_modules
-node_modules
-**/node_modules
+/npm-test
+modules/**/node_modules
 
 # Logs
 logs
