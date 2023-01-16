@@ -22,3 +22,6 @@
 [submodule "modules/dd-slide-collection"]
 	path = modules/dd-slide-collection
 	url = https://github.com/digitaldasein/dd-slide-collection
+[submodule "dd-slide-collection"]
+	path = dd-slide-collection
+	url = https://github.com/digitaldasein/dd-slide-collection
